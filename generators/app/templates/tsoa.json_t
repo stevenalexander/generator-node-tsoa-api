@@ -1,0 +1,29 @@
+{
+    "swagger": {
+        "info": {
+            "description": "<%= name %>",
+            "version": "1.0.0",
+            "title": "<%= name %>"
+        },
+        "schemes": [ "http", "https" ],
+        "securityDefinitions": {
+            "api_key": {
+                "type": "apiKey",
+                "name": "access_token",
+                "in": "header"
+            }
+        },
+        "outputDirectory": "./dist",
+        "entryFile": "./src/app.ts",
+        "host": "localhost:3001",
+        "basePath": "/api"
+    },
+
+    "routes": {
+        "basePath": "/api",
+        "entryFile": "./src/app.ts",
+        "routesDir": "./src",
+        "middleware": "express",
+        "iocModule": "./src/ioc"
+    }
+}

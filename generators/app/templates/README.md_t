@@ -1,0 +1,56 @@
+# <%= name %>
+
+## Requires
+
+* NodeJS
+
+## Run
+
+```
+npm run build # needed first run to generate routes/swagger docs
+
+npm start # https://localhost:3001/docs
+```
+
+## Tests
+
+```
+npm test
+npm run test-coverage # unit tests with code coverage
+npm run audit # nsp check
+```
+
+## Key components
+
+### swagger-ui-express
+
+The swagger-ui-express module adds middleware to the express app to serve the Swagger UI. In this project we annotate the code as per tsoa (see below), rendering sandardised Swagger documentation that makes clear how to use the API. This makes the API more accessible to third parties and reduces requirement for manual documentation.
+
+[scottie1984/swagger-ui-express](https://github.com/scottie1984/swagger-ui-express)
+
+### tsoa
+
+- TypeScript controllers and models as the single source of truth for your API
+- A valid swagger spec is generated from your controllers and models, including:
+  - Paths (e.g. GET /Users)
+  - Definitions based on TypeScript interfaces (models)
+  - Parameters/model properties marked as required or optional based on TypeScript (e.g. myProperty?: string is optional in the Swagger spec)
+  - jsDoc supported for object descriptions (most other metadata can be inferred from TypeScript types)
+- Routes are generated for middleware of choice
+  - Express, Hapi, and Koa currently supported, other middleware can be supported using a simple handlebars template
+  - Validate request payloads
+
+[lukeautry/tsoa](https://github.com/lukeautry/tsoa)
+
+### Inversify
+
+[inversify/InversifyJS](https://github.com/inversify/InversifyJS)
+
+A good blog from the guy that wrote Inversify:
+[The current state of dependency inversion in JavaScript * Wolk Software Engineering](http://blog.wolksoftware.com/the-current-state-of-dependency-inversion-in-javascript)
+
+### inversify-binding-decorators
+
+Declare bindings using decorators
+A binding is the link between the abstraction (string literal/ interface) and an actual concretion (class). The IOC container is aware of the class, but the class which takes it as a dependency is only aware of its abstraction.
+[inversify-binding-decorators](https://github.com/inversify/inversify-binding-decorators)

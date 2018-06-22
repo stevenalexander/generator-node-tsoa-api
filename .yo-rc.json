@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Steven Alexander",
+      "authorEmail": "s.alexander@kainos.com",
+      "authorUrl": ""
+    }
+  }
+}
